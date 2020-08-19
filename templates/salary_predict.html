@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning Application</title>
+	<style type="text/css">
+		div{
+			text-align: center;
+			padding: 28px; }
+		h1{text-align: center;}	
+	</style>
+</head>
+<body>
+	<h1>ML Salary Prediction </h1>
+	<div class="container">
+		<form action="{{url_for('predict')}}" method='post' class="form-inline">
+	  		<label for="years">Years of Experience:</label>
+			<input type="text" class="form-control" name="years" id="years" class="years" value=''>&nbsp;
+			<input type="submit" name="sal_submit" class="btn btn-default">
+		</form>
+	</div>
+	{% if(result) %}
+	<fieldset form="form1">
+	  <legend>Salary prediction:</legend>
+			{{result}}
+	</fieldset>
+	{% endif %}
+</body>
+</html>
